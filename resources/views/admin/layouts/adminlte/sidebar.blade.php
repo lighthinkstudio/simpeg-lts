@@ -1,4 +1,4 @@
-    <aside class="main-sidebar sidebar-light-indigo elevation-4">
+    <aside class="main-sidebar sidebar-dark-indigo elevation-4">
       <div class="text-center">
         <a href="{{ route('admin.dashboard') }}" class="brand-link">
           <img src="@if(!empty(konfigurasi('icon')->deskripsi) && file_exists(public_path('storage/assets/uploads/logo/' . konfigurasi('icon')->deskripsi))) {{ asset('storage/assets/uploads/logo/' . konfigurasi('icon')->deskripsi) }} @else {{ asset('assets/images/logo/' . konfigurasi('icon')->deskripsi) }} @endif" alt="Logo" class="brand-image img-rounded circle elevation-2 bg-light" style="opacity: .8">
@@ -46,7 +46,7 @@
 
             <li class="nav-header"><i class="fa fa-database"></i> <strong>DATA REFERENSI</strong></li>
             <li class="nav-item">
-              <a href="{{ route('admin.import') }}" class="nav-link">
+              <a href="#" class="nav-link">
                 <i class="nav-icon fa-solid fa-sync"></i>
                 <p>
                   SINKRON DATA
