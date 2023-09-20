@@ -58,7 +58,7 @@ class Pegawai extends Model
     public function aktif()
     {
         $query = DB::table('master_pegawai')
-                    ->where('status_akun','active')
+                    ->where('status','active')
                     ->orderBy('nama', 'ASC')
                     ->get();
 
