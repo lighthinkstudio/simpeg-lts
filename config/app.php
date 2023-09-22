@@ -166,7 +166,6 @@ return [
          * Package Service Providers...
          */
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Lighthinkstudio\Siasync\SiasyncServiceProvider::class,
 
         /*
          * Application Service Providers...

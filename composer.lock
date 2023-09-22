@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ef606586a0f404ff1a3cdee6ce198c6",
+    "content-hash": "68552212a9a11bd3be004209fba8b739",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1969,53 +1969,6 @@
                 }
             ],
             "time": "2023-08-05T12:09:49+00:00"
-        },
-        {
-            "name": "lighthinkstudio/siasync",
-            "version": "1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lighthinkstudio/siasync.git",
-                "reference": "0816c500c71a56e9733742bd60ba5bd67c2e2c11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lighthinkstudio/siasync/zipball/0816c500c71a56e9733742bd60ba5bd67c2e2c11",
-                "reference": "0816c500c71a56e9733742bd60ba5bd67c2e2c11",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^7.0.1"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Lighthinkstudio\\Siasync\\SiasyncServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lighthinkstudio\\Siasync\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Muslim",
-                    "email": "dmooez.dev@gmail.com"
-                }
-            ],
-            "description": "SIASYNC adalah sebuah library konfigurasi API SIASN untuk Framework Laravel.",
-            "support": {
-                "issues": "https://github.com/lighthinkstudio/siasync/issues",
-                "source": "https://github.com/lighthinkstudio/siasync/tree/1.0"
-            },
-            "time": "2023-07-10T04:45:50+00:00"
         },
         {
             "name": "maatwebsite/excel",
