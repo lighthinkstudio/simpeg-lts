@@ -168,4 +168,6 @@
 		</div>
 	</div>
 </div>
+
+@include('plugins.custom_file_input_js')
 @endsection
