@@ -145,7 +145,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{ route('admin.akun_pegawai') }}" class="nav-link">
+              <a href="{{ route('admin.akun') }}" class="nav-link">
                 <i class="nav-icon fa-solid fa-user-shield"></i>
                 <p>
                   AKUN PEGAWAI
