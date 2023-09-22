@@ -29,7 +29,7 @@ class UserController extends Controller
         // dd($user);
 
         $data = [
-            'title'     => 'Data Pengguna',
+            'title'     => 'DATA PENGGUNA',
             'user'      => $user,
         ];
         return view('admin.user.index', $data);
@@ -48,7 +48,7 @@ class UserController extends Controller
         // dd($user);
 
         $data = [
-            'title'     => 'Tambah Data Pengguna',
+            'title'     => 'TAMBAH DATA PENGGUNA',
             'role'      => $role,
             'pegawai'   => $pegawai,
         ];
@@ -124,7 +124,7 @@ class UserController extends Controller
         // dd($user);
 
         $data = [
-            'title' => 'Detail Pengguna',
+            'title' => 'DETAIL PENGGUNA: ' . $user->nama,
             'user'  => $user
         ];
         return view('admin.user.detail', $data);
@@ -144,7 +144,7 @@ class UserController extends Controller
         $pegawai = $m_pegawai->aktif();
 
         $data = [
-            'title'     => 'Edit Pengguna',
+            'title'     => 'EDIT PENGGUNA',
             'user'      => $user,
             'role'      => $role,
             'pegawai'   => $pegawai,
