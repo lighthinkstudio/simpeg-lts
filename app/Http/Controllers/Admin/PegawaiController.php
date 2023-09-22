@@ -10,10 +10,6 @@ use App\Http\Requests\StorePegawaiRequest;
 use App\Http\Requests\UpdatePegawaiRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Psr7;
-use Lighthinkstudio\Siasync\Siasync;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\PegawaiImport;
 
@@ -33,7 +29,7 @@ class PegawaiController extends Controller
         $pegawai->appends($request->only('search', 'limit'));
 
         $data = [
-            'title'         => 'Data Pegawai',
+            'title'         => 'DATA PEGAWAI',
             'pegawai'       => $pegawai,
             'rw_jabatan'    => $m_rwjabatan,
             'rw_pendidikan' => $m_rwpendidikan,
@@ -75,7 +71,7 @@ class PegawaiController extends Controller
         $pegawai = $m_pegawai->detail($id);
 
         $data = [
-            'title'     => 'Data Pegawai : ' . $pegawai->nama,
+            'title'     => 'DATA PEGAWAI : ' . $pegawai->nama,
             'pegawai'   => $pegawai,
         ];
         return view('admin.pegawai.detail', $data);
