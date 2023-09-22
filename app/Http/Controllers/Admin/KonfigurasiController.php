@@ -21,7 +21,7 @@ class KonfigurasiController extends Controller
         // dd($konfigurasi);
 
         $data = [
-            'title'         => 'Konfigurasi Website',
+            'title'         => 'KONFIGURASI WEBSITE',
             'konfigurasi'   => $konfigurasi
         ];
         return view('admin.konfigurasi.index', $data);
