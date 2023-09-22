@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\KonfigurasiController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PegawaiController;
+use App\Http\Controllers\Admin\AkunController;
 use App\Http\Controllers\Admin\JenisUnitOrganisasiController;
 use App\Http\Controllers\Admin\TingkatPendidikanController;
 use App\Http\Controllers\Admin\PendidikanController;
@@ -76,8 +77,22 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
         ->name('sinkron_pegawai');
 
     // USER PEGAWAI
-    Route::get('/pegawai/akun', [PegawaiController::class, 'akun'])
-        ->name('akun_pegawai');
+    Route::get('/akun', [AkunController::class, 'index'])
+        ->name('akun');
+    Route::get('/akun/tambah', [AkunController::class, 'create'])
+        ->name('tambah_akun');
+    Route::post('/akun/simpan', [AkunController::class, 'store'])
+        ->name('simpan_akun');
+    Route::get('/akun/edit/{id}', [AkunController::class, 'edit'])
+        ->name('edit_akun');
+    Route::patch('/akun/update/{id}', [AkunController::class, 'update'])
+        ->name('update_akun');
+    Route::delete('/akun/hapus/{id}', [AkunController::class, 'destroy'])
+        ->name('hapus_akun');
+    Route::put('/akun/password/{id}', [AkunController::class, 'password'])
+        ->name('password_akun');
+    // Route::get('/pegawai/akun', [PegawaiController::class, 'akun'])
+    //     ->name('akun_pegawai');
 
 
 
@@ -86,7 +101,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     Route::get('/import', function () {
         $data = [
-            'title' => 'Import Data'
+            'title' => 'BACKUP DAN RESTORE'
         ];
         return view('admin.import.index', $data);
     })->name('import');
