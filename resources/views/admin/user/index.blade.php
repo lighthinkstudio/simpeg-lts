@@ -31,7 +31,7 @@
 					<thead>
 						<tr>
 							<th width="6%" class="text-center">NO.</th>
-							<th>NAMA/ NIP</th>
+							<th>NIP/ NAMA</th>
 							<th>EMAIL</th>
 							<th width="16%" class="text-center">ROLE</th>
 							<th width="14%" class="text-center">ACTION</th>
@@ -43,7 +43,7 @@
 							<td class="text-center">{{ $no + 1 }}</td>
 							<td>
 								<div class="row align-items-center">
-									<div class="col-3">
+									<div class="col-3 text-center">
 										@if(file_exists(public_path('storage/assets/images/profil/' . $data->foto)))
 										<img src="{{ asset('storage/assets/uploads/images/square/' . $data->foto) }}" class="img-thumbnail img-circle img-size-50 mr-2" alt="User Image">
 										@else
