@@ -64,6 +64,7 @@
 						</tr>
 					</thead>
 					<tbody>
+						@if($pegawai->total() > 0)
 						@foreach($pegawai as $key => $data)
 						<tr>
 							<td class="text-center">{{ $pegawai->firstItem() + $key }}</td>
@@ -152,6 +153,11 @@
 							@include('admin.pegawai.delete')
 						</tr>
 						@endforeach
+						@else
+						<tr>
+							<td colspan="4" class="text-center">DATA TIDAK TERSEDIA</td>
+						</tr>
+						@endif
 					</tbody>
 				</table>
 			</div>
