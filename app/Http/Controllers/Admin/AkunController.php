@@ -34,6 +34,7 @@ class AkunController extends Controller
         $data = [
             'title'     => 'DATA AKUN PEGAWAI',
             'pegawai'   => $pegawai,
+            'limit'     => $limit
         ];
         return view('admin.akun.index', $data);
     }
