@@ -22,7 +22,45 @@
 	<div class="col-md-12">
 		<div class="card card-primary card-outline">
 			<div class="card-body">
-				<table id="datatables" class="table table-bordered table-hover projects">
+				<form action="{{ url()->current() }}">
+					<div class="row mb-2">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label class="form-check-label mr-1" for="limit">
+									Show 
+								</label>
+								<select name="limit" class="custom-select custom-select-sm form-control form-control-sm col-2" aria-controls="limit">
+									<option value="10" @if($limit == 10)selected @endif>10</option>
+									<option value="25" @if($limit == 25)selected @endif>25</option>
+									<option value="50" @if($limit == 50)selected @endif>50</option>
+									<option value="100" @if($limit == 100)selected @endif>100</option>
+								</select>
+								<label class="form-check-label ml-1" for="limit">
+									entries 
+								</label>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="float-right">
+								<div class="form-inline">
+									<label class="form-check-label mr-1" for="search">
+										Search: 
+									</label>
+									<div class="input-group">
+										<input type="search" name="search" class="form-control form-control-sm" value="{{ $_GET['search'] ?? '' }}" placeholder="Ketik nama/ nip pegawai..." aria-controls="search">
+										<span class="input-group-append">
+											<button type="submit" class="btn btn-sm btn-info">
+												<i class="fas fa-search"></i> Cari
+											</button>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<table class="table table-bordered table-hover projects">
 					<thead>
 						<tr>
 							<th width="6%" class="text-center">NO.</th>
@@ -32,9 +70,10 @@
 						</tr>
 					</thead>
 					<tbody>
+						@if($pegawai->total() > 0)
 						@foreach($pegawai as $no => $data)
 						<tr>
-							<td class="text-center">{{ $no + 1 }}</td>
+							<td class="text-center">{{ $pegawai->firstItem() + $no }}</td>
 							<td>
 								<div class="row align-items-center">
 									<div class="col-3 text-center">
@@ -76,8 +115,23 @@
 							{{-- @include('admin.pegawai.detail') --}}
 						</tr>
 						@endforeach
+						@else
+						<tr>
+							<td colspan="4" class="text-center">DATA TIDAK TERSEDIA</td>
+						</tr>
+						@endif
 					</tbody>
 				</table>
+			</div>
+			<div class="card-footer clearfix">
+				<div class="row">
+					<div class="col-6">
+						<caption>Showing {{ $pegawai->firstItem() ?? 0 }} to {{ $pegawai->lastItem() ?? 0 }} of {{ $pegawai->total() }} entries</caption>
+					</div>
+					<div class="col-6">
+						<div class="float-right">{{ $pegawai->onEachSide(1)->links() }}</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
